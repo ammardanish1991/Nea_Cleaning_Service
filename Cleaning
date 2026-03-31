@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEA Cleaning Service</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: white;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+}
+
+header h2 {
+    color: #0ea5e9;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #0ea5e9;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://images.unsplash.com/photo-1581578731548-c64695cc6952') center/cover;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 50px;
+}
+
+.hero p {
+    margin: 15px 0;
+}
+
+.btn {
+    background: #22c55e;
+    padding: 12px 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #16a34a;
+}
+
+/* Section */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Services */
+.services {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin: 15px;
+    width: 280px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Why */
+.why {
+    background: #f9fafb;
+}
+
+/* Pricing */
+.pricing-box {
+    display: inline-block;
+    padding: 20px;
+}
+
+/* Form */
+form {
+    max-width: 400px;
+    margin: auto;
+    text-align: left;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0ea5e9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* WhatsApp */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .hero h1 {
+        font-size: 30px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h2>NEA Cleaning Service</h2>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <div>
+        <h1>Professional Cleaning You Can Trust</h1>
+        <p>Rumah bersih, hidup lebih tenang ✨</p>
+        <a href="#contact" class="btn">Book Now</a>
+    </div>
+</div>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="card">
+            <h3>Home Cleaning</h3>
+            <p>Cuci rumah, vacuum, mop</p>
+        </div>
+        <div class="card">
+            <h3>Office Cleaning</h3>
+            <p>Pejabat & workspace</p>
+        </div>
+        <div class="card">
+            <h3>Deep Cleaning</h3>
+            <p>Cleaning menyeluruh</p>
+        </div>
+    </div>
+</section>
+
+<section class="why">
+    <h2>Why Choose Us</h2>
+    <p>✔ Staff berpengalaman</p>
+    <p>✔ Harga berpatutan</p>
+    <p>✔ Peralatan profesional</p>
+    <p>✔ Fast & reliable</p>
+</section>
+
+<section id="pricing">
+    <h2>Pricing</h2>
+    <div class="pricing-box">
+        <p>Basic Cleaning: RM80</p>
+        <p>Deep Cleaning: RM150</p>
+        <p>Office Cleaning: RM200</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Book Service</h2>
+    <form onsubmit="sendWhatsApp(event)">
+        <input type="text" id="name" placeholder="Nama" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <textarea id="service" placeholder="Detail service"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<a href="https://wa.me/60123456789" class="whatsapp">💬</a>
+
+<footer>
+    <p>012-3456789 | nea.cleaning@email.com</p>
+    <p>© 2026 NEA Cleaning Service</p>
+</footer>
+
+<script>
+function sendWhatsApp(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let service = document.getElementById("service").value;
+
+    let message = `Booking NEA Cleaning Service:%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+Service: ${service}`;
+
+    window.open(`https://wa.me/60123456789?text=${message}`, '_blank');
+}
+</script>
+
+</body>
+</html>
